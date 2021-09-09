@@ -1,6 +1,17 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## TODO 
+- [x] Create folders and files 
+- [x] Install NPM, get json files
+- [x] Get express working and the server up 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
 
 ## Description
 
