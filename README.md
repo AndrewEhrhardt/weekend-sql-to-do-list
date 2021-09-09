@@ -6,13 +6,21 @@
 - [x] Get express working and the server up 
 - [x] Get jquery installed and working 
 - [ ] Add inputs and button for a new to do task in html
-- [ ] Create funciton in client to take in and store those inputs in a variable
+- [x] Create function in client to take in and store those inputs in a variable
 - [x] Create database
-- [ ] Post the inputs 
-- [ ] Get the previous inputs
+- [x] Post the inputs 
+- [x] Ensure inputs are reaching router
+- [x] Get the previous inputs
 - [ ] Append inputs to the DOM
+- [ ] Ensure inputs are reaching router
 - [ ] 
-
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 ## Description
 
