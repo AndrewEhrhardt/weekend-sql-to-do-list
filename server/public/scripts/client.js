@@ -48,7 +48,7 @@ function appendTasksToDom(response){
     for (task of response)
         $('#task-list').append(`
         <tr>
-        <td>${task.task}</td>
+        <td class="${(task.completed ? "completed": "")}">${task.task}</td>
         <td>${task.completed ? "":
             `<button data-id="${task.id}" class="mark-completed-button">
                  Completed

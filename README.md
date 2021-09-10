@@ -14,14 +14,14 @@
 - [x] Append tasks to the DOM
 - [x] Add put in client for completed button 
 - [x] Add update in router for completed button 
-- [ ] Update CSS for completed item 
-- [ ] Add delete in client for delete button
+- [x] Update CSS for completed item 
+- [ ] Add delete in client for delete button 
 - [ ] Add delete in router for delete button 
 - [ ] 
 - [ ] 
 - [ ] 
 - [ ] 
-- [ ] 
+- [ ] Add comments 
 
 ## Description
 
