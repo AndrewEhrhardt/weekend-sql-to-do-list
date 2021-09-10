@@ -29,4 +29,16 @@ router.get('/', (req, res) => {
   });
 });
 
+router.put('/:id', (req,res) => {
+  console.log(req.params);
+  const taskId = req.params.id;
+  const queryText = 'UPDATE "tasks" SET "completed" = True WHERE "id" = $1;';
+  pool.query(queryText, [taskId]).then((result) => {
+      res.sendStatus(200);
+  }).catch((error) => {
+      console.log('Error in /tasks PUT', error);
+      res.sendStatus(500);
+  })
+});
+
 module.exports = router;

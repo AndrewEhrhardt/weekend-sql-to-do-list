@@ -9,6 +9,7 @@ function readyNow(){
 
 function clickListener(){
     $('#add-task').on('click', postTask)
+    $('#task-list').on('click', '.mark-completed-button', markCompleted)
 }
 
 function postTask(){
@@ -43,4 +44,35 @@ function getTasks(){
 
 function appendTasksToDom(response){
     console.log(response);
+    $('#task-list').empty();
+    for (task of response)
+        $('#task-list').append(`
+        <tr>
+        <td>${task.task}</td>
+        <td>${task.completed ? "":
+            `<button data-id="${task.id}" class="mark-completed-button">
+                 Completed
+            </button>` 
+        }
+        <td>
+            <button data-id="${task.id}" class="delete-button">
+            Delete
+            </button>
+        </td>
+        </tr>
+    `)
+}
+
+function markCompleted(){
+    const taskId = $(this).data('id');
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${taskId}`,
+    }).then( function(response){
+        console.log('Task Completed!')
+        getTasks();
+    }).catch (function (error){
+        alert('Something went wrong!');
+        console.log('Error in PUT', error);
+    });
 }
