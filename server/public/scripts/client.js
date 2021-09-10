@@ -14,7 +14,6 @@ function clickListener(){
 }
 
 function postTask(){
-    console.log('in post task');
     let taskToAdd = {
         task: $('#task-input').val()
     }
@@ -36,22 +35,24 @@ function getTasks(){
         type: 'GET',
         url: '/tasks'
     }).then(function(response) {
-        console.log(response);
         appendTasksToDom(response);
     }).catch(function(error){
         console.log('error in GET', error);
     });
 }
 
+//This function appends all the tasks to the dom. 
+//input checkbox that is appended below will be checked if task.completed is true, 
+//and the value of the box will be "false" if task.completed is true. This is the value 
+//that will be sent to be put into the database in case the task needs to be unchecked.
 function appendTasksToDom(response){
-    console.log(response);
     $('#task-list').empty();
-    for (task of response)
+    for (task of response) 
         $('#task-list').append(`
         <tr>
         <td class="${(task.completed ? "completed": "")}">${task.task}</td>
         <td> 
-            <input type="checkbox" data-id="${task.id}" class="completed-toggle" ${(task.completed ? "checked": "")}>
+            <input type="checkbox" data-id="${task.id}" value="${(!task.completed)}" class="completed-toggle" ${(task.completed ? "checked": "")}>
         </td>
         <td>
             <button data-id="${task.id}" class="delete-button">
@@ -64,13 +65,7 @@ function appendTasksToDom(response){
 
 function toggleCompleted(){
     const taskId = $(this).data('id');
-    const toggleState = {};
-    if ($(this).attr('checked') == "checked"){ //checks if the box is checked 
-        toggleState.toggle = false; //since the checkbox is being unchecked, the task completed status will now be false 
-    } else {
-        toggleState.toggle = true; //since box is being checked, task completed will now be set to true
-    }
-    console.log(toggleState.toggle);
+    const toggleState = {toggle: $(this).val()}; //sends the true or false state to change in the database
     $.ajax({
         method: 'PUT',
         url: `/tasks/${taskId}`,
@@ -86,7 +81,6 @@ function toggleCompleted(){
 
 function deleteTask(){
     const taskId = $(this).data('id');
-    console.log(taskId);
     $.ajax({
         method: 'DELETE',
         url: `/tasks/${taskId}`,

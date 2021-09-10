@@ -30,7 +30,6 @@ router.get('/', (req, res) => {
 });
 
 router.put('/:id', (req,res) => {
-  console.log(req.params);
   let toggleState = req.body;
   const taskId = req.params.id;
   const queryText = 'UPDATE "tasks" SET "completed" = $2 WHERE "id" = $1;';
@@ -43,7 +42,6 @@ router.put('/:id', (req,res) => {
 });
 
 router.delete('/:id', (req, res) => { 
-  console.log(req.params.id);
   const taskId = req.params.id;
   const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;';
   pool.query(queryText, [taskId]).then((result) => {
