@@ -10,6 +10,7 @@ function readyNow(){
 function clickListener(){
     $('#add-task').on('click', postTask)
     $('#task-list').on('click', '.mark-completed-button', markCompleted)
+    $('#task-list').on('click', '.delete-button', deleteTask)
 }
 
 function postTask(){
@@ -76,3 +77,18 @@ function markCompleted(){
         console.log('Error in PUT', error);
     });
 }
+
+function deleteTask(){
+    const taskId = $(this).data('id');
+    console.log(taskId);
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`,
+    }).then( function(response){
+        console.log('Task removed!')
+        getTasks();
+    }).catch (function (error){
+        alert('Something went wrong!');
+        console.log('Error in DELETE', error);
+    });
+  }

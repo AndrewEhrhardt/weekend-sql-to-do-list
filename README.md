@@ -5,7 +5,7 @@
 - [x] Install NPM, get json files
 - [x] Get express working and the server up 
 - [x] Get jquery installed and working 
-- [ ] Add inputs and button for a new to do task in html
+- [x] Add inputs and button for a new to do task in html
 - [x] Create function in client to take in and store those inputs in a variable
 - [x] Create database
 - [x] Post the inputs 
@@ -15,8 +15,8 @@
 - [x] Add put in client for completed button 
 - [x] Add update in router for completed button 
 - [x] Update CSS for completed item 
-- [ ] Add delete in client for delete button 
-- [ ] Add delete in router for delete button 
+- [x] Add delete in client for delete button 
+- [x] Add delete in router for delete button 
 - [ ] 
 - [ ] 
 - [ ] 
