@@ -13,6 +13,7 @@ function clickListener(){
     $('#task-list').on('click', '.delete-button', deleteTask)
 }
 
+//sends a task to be added to the database 
 function postTask(){
     let taskToAdd = {
         task: $('#task-input').val()
@@ -31,6 +32,7 @@ function postTask(){
         });
 }
 
+//gets the tasks
 function getTasks(){
     $.ajax({
         type: 'GET',
@@ -64,6 +66,9 @@ function appendTasksToDom(response){
     `)
 }
 
+
+//sends a put to update if a task has been completed,
+//or if it has been changed back to uncompleted
 function toggleCompleted(){
     const taskId = $(this).data('id');
     const toggleState = {toggle: $(this).val()}; //sends the true or false state to change in the database
@@ -80,6 +85,8 @@ function toggleCompleted(){
     });
 }
 
+
+//Sends a delete to change if a task has been deleted
 function deleteTask(){
     const taskId = $(this).data('id');
     $.ajax({
