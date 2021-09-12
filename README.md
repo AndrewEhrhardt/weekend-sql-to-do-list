@@ -17,10 +17,6 @@
 - [x] Update CSS for completed item 
 - [x] Add delete in client for delete button 
 - [x] Add delete in router for delete button 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
 - [ ] Add comments 
 
 ## Description

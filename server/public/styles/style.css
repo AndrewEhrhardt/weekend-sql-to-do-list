@@ -1,4 +1,35 @@
 .completed {
     text-decoration: line-through;
+    color: gray;
 }
 
+html,body {
+    height: 100%;
+}
+
+#sb-site, .sb-site-container {
+    background-color: #FDE8BE;
+}
+
+.col-md-6 {
+    background-color: #EBB08B;
+    max-width: 100px;
+}
+.move-right {
+    text-align: right;
+}
+.move-center {
+    text-align: center;
+}
+.float-right {
+    float: right;
+}
+
+.completed-toggle {
+    height: 30px;
+    width:30px;
+}
+
+.toggle-container {
+    text-align:center;
+}

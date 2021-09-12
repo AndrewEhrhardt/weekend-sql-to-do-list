@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
     <script src="vendors/jquery-3.6.0.min.js"></script>
+    <script src="vendors/js/bootstrap.min.js"></script>
     <script src="scripts/client.js"></script>
 </head>
-<body>
-    <h1>To Do List</h1>
+<body class="row d-flex justify-content-center sb-site-container" id="sb-site">
+    <div class="col-md-6 h-100 container" style="max-width: 500px;">
+    <h1 class="text-center">To Do List</h1>
     <h2>Add Task</h2>
-    <label>Add Task</label>
     <input type="text" id="task-input" placeholder="Type Task Here">
     <button id="add-task">Add Task</button>
-    <table>
+    <table class="table">
         <thead>
           <tr>
             <th>Task</th>
-            <th>Mark Complete</th>
-            <th>Delete</th>
+            <div>
+            <th class="move-center">Mark Complete</th>
+            <th class="move-right">Delete</th>
+            </div>
           </tr>
         </thead>
         <tbody id="task-list">
         </tbody>
       </table>
+    </div>
 </body>
 </html>

@@ -17,6 +17,7 @@ function postTask(){
     let taskToAdd = {
         task: $('#task-input').val()
     }
+    $('#task-input').val('');
     $.ajax({
         type: 'POST',
         url: '/tasks',
@@ -51,11 +52,11 @@ function appendTasksToDom(response){
         $('#task-list').append(`
         <tr>
         <td class="${(task.completed ? "completed": "")}">${task.task}</td>
-        <td> 
+        <td class="toggle-container"> 
             <input type="checkbox" data-id="${task.id}" value="${(!task.completed)}" class="completed-toggle" ${(task.completed ? "checked": "")}>
         </td>
         <td>
-            <button data-id="${task.id}" class="delete-button">
+            <button data-id="${task.id}" class="delete-button float-right">
             Delete
             </button>
         </td>
